@@ -1,0 +1,7 @@
+extends layout
+
+block content
+	h1= title
+	+form(href='foo', id='add')
+		+formparagroup({type: 'text', labelText: 'XT name', inputname: 'xt_name'})
+		+formparagroup({type: 'text', labelText: 'XT ID', inputname: 'xt_id'})
