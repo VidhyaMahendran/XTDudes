@@ -2,4 +2,7 @@ extends layout
 
 block content
 	h1= title
-	p Welcome to #{title}
+	+form(name='search_form', id='add', action='/search', method='post')
+		+formlistgroup({labelText: 'Search By', inputname: 'search_option', listOptions: ['Technology', 'Name']})
+		+formparagroup({type: 'text', labelText: '', inputname: 'search_keyword'})
+		+formsubmitbutton({type: 'submit', labelText: 'Add Now', inputname: 'add_developer'})
