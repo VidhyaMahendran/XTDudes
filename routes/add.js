@@ -6,4 +6,9 @@ router.get('/', function(req, res, next) {
   res.render('add', { title: 'Adding new XT Dudes' });
 });
 
+/* GET developers listing. */
+router.post('/', function(req, res, next) {
+  res.render('add', { title: 'Adding new XT Dudes' });
+});
+
 module.exports = router;

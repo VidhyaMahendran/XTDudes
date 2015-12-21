@@ -2,6 +2,7 @@ extends layout
 
 block content
 	h1= title
-	+form(href='foo', id='add')
+	+form(href='foo', id='add', action='/add', method='post')
 		+formparagroup({type: 'text', labelText: 'XT name', inputname: 'xt_name'})
 		+formparagroup({type: 'text', labelText: 'XT ID', inputname: 'xt_id'})
+		+formsubmitbutton({type: 'submit', labelText: 'Add Now', inputname: 'add_developer'})

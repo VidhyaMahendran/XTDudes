@@ -1,4 +1,20 @@
 doctype html
+mixin form
+  form&attributes(attributes)
+    block
+
+mixin formparagroup(inputAttributes)
+  p(class='group')
+    label(for='#{inputAttributes.inputname}')
+      | #{inputAttributes.labelText}
+    input(type='#{inputAttributes.type}', name='#{inputAttributes.inputname}', id='#{inputAttributes.inputname}')
+    block
+
+mixin formsubmitbutton(inputAttributes)
+  p(class='group')
+    input(type='#{inputAttributes.type}', name='#{inputAttributes.inputname}', id='#{inputAttributes.inputname}')
+    block
+
 html
   head
     title= title
