@@ -1,5 +1,7 @@
 var express = require('express');
 var router = express.Router();
+var mongoose = require('mongoose');
+var XTEngineer = mongoose.model('XTEngineer');
 
 /* GET developers listing. */
 router.get('/', function(req, res, next) {

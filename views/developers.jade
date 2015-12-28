@@ -4,4 +4,11 @@ block content
 	h1= title
 	p
 		a(href="/add") Add a new XT Developer
-	p Welcome to #{title}
+	ul
+		each XTEngineer in XTEngineers
+			li
+				span= XTEngineer.username
+				br
+				span= XTEngineer.emailid
+				br
+				span= XTEngineer.technology
