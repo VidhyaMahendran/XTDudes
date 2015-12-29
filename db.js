@@ -4,13 +4,17 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 var XTEngineerSchema = new Schema(
     {
-        username: String,
+        fullname: String,
+        empid: String,
         emailid: String,
+        role: String,
+        manager: String,
+        doj: Date,
         technology: String
     }
 );
 
 // Mongoose Model definition
-var XTEngineer = mongoose.model('XTEngineer', XTEngineerSchema);
+var XTEngineer = mongoose.model('xtengineer', XTEngineerSchema);
 
 mongoose.connect('mongodb://127.0.0.1/sapient');

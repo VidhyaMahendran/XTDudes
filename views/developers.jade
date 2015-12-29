@@ -7,9 +7,18 @@ block content
 	ul
 		each XTEngineer in XTEngineers
 			li
-				span= XTEngineer.username
+				span= XTEngineer.fullname
+				br
+				span= XTEngineer.empid
 				br
 				span= XTEngineer.emailid
 				br
+				span= XTEngineer.role
+				br
+				span= XTEngineer.manager
+				br
+				span= XTEngineer.doj
+				br
 				span= XTEngineer.technology
-
+				br
+				a(href="/delete/#{XTEngineer.empid}") Delete

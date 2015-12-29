@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 var mongoose = require('mongoose');
-var XTEngineer = mongoose.model('XTEngineer');
+var XTEngineer = mongoose.model('xtengineer');
 
 /* Show Add Form */
 router.get('/', function(req, res, next) {
@@ -12,8 +12,12 @@ router.get('/', function(req, res, next) {
 /* Insert Records in to Mongo DB */
 router.post('/', function(req, res, next) {
 	new XTEngineer({
-		username: req.body.xt_name,
-		emailid: req.body.email_id,
+		fullname: req.body.fullname,
+		empid: req.body.empid,
+		emailid: req.body.emailid,
+		role: req.body.role,
+		manager: req.body.manager,
+		doj: req.body.doj,
 		technology: req.body.technology
 	}).save( function(err, todo, count){
 		res.redirect( '/developers' );

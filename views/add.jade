@@ -3,7 +3,11 @@ extends layout
 block content
 	h1= title
 	+form(name='add_form', id='add', action='/add', method='post')
-		+formparagroup({type: 'text', labelText: 'XT name', inputname: 'xt_name'})
-		+formparagroup({type: 'text', labelText: 'Email', inputname: 'email_id'})
+		+formparagroup({type: 'text', labelText: 'XT name', inputname: 'fullname'})
+		+formparagroup({type: 'text', labelText: 'Employee ID', inputname: 'empid'})
+		+formparagroup({type: 'text', labelText: 'Email ID', inputname: 'emailid'})
+		+formparagroup({type: 'text', labelText: 'Role', inputname: 'role'})
+		+formparagroup({type: 'text', labelText: 'Manager', inputname: 'manager'})
+		+formparagroup({type: 'text', labelText: 'Date of Joining', inputname: 'doj'})
 		+formparagroup({type: 'text', labelText: 'Technology', inputname: 'technology'})
 		+formsubmitbutton({type: 'submit', labelText: 'Add Now', inputname: 'add_developer'})
