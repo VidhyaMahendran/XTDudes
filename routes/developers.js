@@ -9,9 +9,13 @@ router.get('/', function(req, res, next) {
     XTEngineer.find().exec(function (error, results, count) {
 		if (results.length === 0) {
 			console.log("No Data");
+			res.render( 'developers', {
+		      title : 'Listing XT Dudes',
+		      XTEngineers : results
+		    });
 		}
 		else {
-			console.log("Got some data");
+			console.log("Got data");
 			res.render( 'developers', {
 		      title : 'Listing XT Dudes',
 		      XTEngineers : results

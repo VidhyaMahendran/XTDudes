@@ -19,10 +19,21 @@ mixin formlistgroup(inputAttributes)
         option(value='#{index}') #{val}
     block
 
+mixin formbuttonGroup(buttonsList)
+  p(class='group')
+    each buttonType in buttonsList
+      span
+        input(type='#{buttonType.type}', name='#{buttonType.inputname}', id='#{buttonType.inputname}', value='#{buttonType.labelText}')
+  block
+
 mixin formsubmitbutton(inputAttributes)
   p(class='group')
-    input(type='#{inputAttributes.type}', name='#{inputAttributes.inputname}', id='#{inputAttributes.inputname}')
+    input(type='#{inputAttributes.type}', name='#{inputAttributes.inputname}', id='#{inputAttributes.inputname}', value='#{inputAttributes.labelText}')
     block
+
+mixin formhidden(inputAttributes)
+  input(type='#{inputAttributes.type}', name='#{inputAttributes.inputname}', id='#{inputAttributes.inputname}', value='#{inputAttributes.value}')
+  block
 
 html
   head

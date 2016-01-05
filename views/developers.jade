@@ -5,20 +5,27 @@ block content
 	p
 		a(href="/add") Add a new XT Developer
 	ul
-		each XTEngineer in XTEngineers
-			li
-				span= XTEngineer.fullname
-				br
-				span= XTEngineer.empid
-				br
-				span= XTEngineer.emailid
-				br
-				span= XTEngineer.role
-				br
-				span= XTEngineer.manager
-				br
-				span= XTEngineer.doj
-				br
-				span= XTEngineer.technology
-				br
-				a(href="/delete/#{XTEngineer.empid}") Delete
+		if XTEngineers.length
+			each XTEngineer in XTEngineers
+				li
+					span= XTEngineer.fullname
+					br
+					span= XTEngineer.empid
+					br
+					span= XTEngineer.emailid
+					br
+					span= XTEngineer.role
+					br
+					span= XTEngineer.manager
+					br
+					span= XTEngineer.doj
+					br
+					span= XTEngineer.technology
+					+form(name='edit_form', id='edit', action='/edit', method='post')
+						+formhidden({type: 'hidden', labelText: 'Remove Now', inputname: 'xt_id', value: XTEngineer._id})
+						+formbuttonGroup([{type: 'submit', labelText: 'Edit', inputname: 'edit_xt'}])
+					+form(name='remove_form', id='remove', action='/remove', method='post')
+						+formhidden({type: 'hidden', labelText: 'Remove Now', inputname: 'xt_id', value: XTEngineer._id})
+						+formbuttonGroup([{type: 'submit', labelText: 'Remove', inputname: 'remove_xt'}])
+		else
+			li No Data

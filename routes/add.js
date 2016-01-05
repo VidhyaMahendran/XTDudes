@@ -6,7 +6,7 @@ var XTEngineer = mongoose.model('xtengineer');
 
 /* Show Add Form */
 router.get('/', function(req, res, next) {
-  res.render('add', { title: 'Adding new XT Dudes' });
+	res.render('add', { title: 'Adding new XT Dudes' });
 });
 
 /* Insert Records in to Mongo DB */
